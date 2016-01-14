@@ -1,6 +1,6 @@
 #### 'L' : Oracle PL/SQL logging utility package
 
-1. Installation
+- Installation
 
 ```
 $ git clone https://github.com/peihanw/plsql_runlog.git
@@ -12,7 +12,7 @@ $ sqlplus user/passwd@sid
 > @l.sql
 ```
 
-1. Usage examples
+- Usage examples
 
 ```
 $ sqlplus user/passwd@sid
@@ -24,7 +24,7 @@ $ sqlplus user/passwd@sid
 
 While RUN_LOG_CFG is configed below:
 
-![alt tag](https://cloud.githubusercontent.com/assets/8326226/12315422/ac45f106-bab5-11e5-9050-dacee9500b0b.png)
+![alt tag](https://cloud.githubusercontent.com/assets/8326226/12317638/104502e2-bace-11e5-82cc-28acf2ec94b4.png)
 
 Only log text from line 10,8 and 7 will be logged.
 
