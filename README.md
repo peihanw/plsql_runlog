@@ -20,42 +20,13 @@ $ sqlplus user/passwd@sid
 > exec pkg_unit_test.case_01;
 ```
 
-```
-select to_char(log_ts, 'hh24:mi:ss.ff') ts, \
-log_sid sid, log_audsid audsid, log_level level, \
-log_src src, log_line line, log_text text \
-from run_log where log_mmdd = to_char(sysdate,'mmdd') \
-order by log_ts desc; 
-```
-
-| TS | SID | AUDSID | LEVEL | SRC | LINE | TEXT |
-|--------------:|-:|------:|--:|------------:|-:|:-----------|
-| 11:21:47.710763 | 88 | 5385410 | TRC | PKG_UNIT_TEST | 10 | some trc log |
-| 11:21:47.710621 | 88 | 5385410 | DBG | PKG_UNIT_TEST |  9 | some dbg log |
-| 11:21:47.710512 | 88 | 5385410 | INF | PKG_UNIT_TEST |  8 | some inf log |
-| 11:21:47.710402 | 88 | 5385410 | WRN | PKG_UNIT_TEST |  7 | some wrn log |
-| 11:21:47.710135 | 88 | 5385410 | ERO | PKG_UNIT_TEST |  6 | some ero log |
-
+![alt tag](https://cloud.githubusercontent.com/assets/8326226/12315419/a2d773d8-bab5-11e5-913b-62c837e09606.png)
 
 While RUN_LOG_CFG is configed below:
 
+![alt tag](https://cloud.githubusercontent.com/assets/8326226/12315422/ac45f106-bab5-11e5-9050-dacee9500b0b.png)
 
-| LOG_SRC | LOG_LINE | LOG_LEVEL | ENABLED |
-|------------:|-:|--:|-:|
-| \* | -1 | INF | 1 |
-| PKG_UNIT_TEST|  6 | OFF | 1 |
-| PKG_UNIT_TEST| 10 | TRC | 1 |
-
-
-Result of the above test case would be:
-
-
-| TS | SID | AUDSID | LEVEL | SRC | LINE | TEXT |
-|--------------:|-:|------:|--:|------------:|-:|:-----------|
-| 11:21:47.710763 | 88 | 5385410 | TRC | PKG_UNIT_TEST | 10 | some trc log |
-| 11:21:47.710512 | 88 | 5385410 | INF | PKG_UNIT_TEST |  8 | some inf log |
-| 11:21:47.710402 | 88 | 5385410 | WRN | PKG_UNIT_TEST |  7 | some wrn log |
-
+Only log text from line 10,8 and 7 will be logged.
 
 #### 'CSV' : Oracle PL/SQL csv utility package
 
