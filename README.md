@@ -28,6 +28,10 @@ While RUN_LOG_CFG is configed below:
 
 Only log text from line 10,8 and 7 will be logged.
 
+Pkg_unit_test.case_02 is another example. Result screenshot below:
+
+![alt tag](https://cloud.githubusercontent.com/assets/8326226/12349638/2c1a77a2-bbac-11e5-8ca5-8bceacb83e68.png)
+
 #### 'CSV' : Oracle PL/SQL csv utility package
 
 - For now, only 'extract' is provided in the CSV utility.
